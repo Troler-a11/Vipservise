@@ -2,22 +2,15 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use(express.json());
-
-// 1. Спочатку вказуємо шлях до головної сторінки
+// Це ПЕРШИЙ і головний рядок. Він каже: "Якщо хтось зайшов на сайт — дай йому index.html"
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// 2. Тільки ПОТІМ дозволяємо серверу бачити інші файли (css, js)
-app.use(express.static(__dirname));
-
-// 3. Логіка замовлення
-app.post('/api/order', (req, res) => {
-    res.json({ success: true, message: "Замовлення прийнято!" });
-});
+// Це ДРУГИЙ рядок. Він дозволяє браузеру підтягнути картинки, стилі та скрипти
+app.use(express.static(path.join(__dirname)));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`VIP Сервер працює на порту ${PORT}`);
+    console.log(`VIP Сервер активний на порту ${PORT}`);
 });
