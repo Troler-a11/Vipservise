@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>.ua.Vip - Ексклюзивний Магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="gold-text">.ua.Vip</h1>
+        <p>Преміальний сервіс автоматизації</p>
+    </header>
+
+    <main id="catalog">
+        </main>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <h2 class="gold-text">Оформлення замовлення</h2>
+            <form id="purchaseForm">
+                <input type="text" id="fullName" placeholder="ПІБ" required>
+                <input type="text" id="city" placeholder="Місто/Село" required>
+                <input type="text" id="postOffice" placeholder="Відділення пошти" required>
+                <input type="tel" id="clientPhone" placeholder="Ваш номер телефону" required>
+                
+                <div class="payment-info">
+                    <p>Перекажіть суму на карту:</p>
+                    <strong id="cardDetails">4444 5555 6666 7777</strong>
+                    <p>Сума: <span id="orderPrice">0</span> грн</p>
+                </div>
+
+                <button type="submit" class="gold-btn">Я оплатив, підтвердити</button>
+                <button type="button" onclick="closeModal()">Скасувати</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
